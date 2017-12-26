@@ -99,11 +99,11 @@ module.exports = {
 
 ### logger
 
-[日志配置](/basics/logger.html)
+[日志配置](./logger.html)
 
 ### swagger
 
-[文档设置](/basics/docs.html)
+[文档设置](./docs.html)
 
 ## 中间件配置
 

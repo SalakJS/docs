@@ -1,6 +1,6 @@
 # Controller
 
-控制器，继承自[Context](/basics/context.html)，用于处理用户的请求，然后返回相应的结果。
+控制器，继承自[Context](./context.html)，用于处理用户的请求，然后返回相应的结果。
 
 控制器会自动校验数据，会根据规则自动注册路由。
 

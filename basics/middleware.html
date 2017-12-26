@@ -1,0 +1,554 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>中间件 · Salak文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-duotone-light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="logger.html" />
+    
+    
+    <link rel="prev" href="helper.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Salak简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    基础功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="structure.html">
+            
+                <a href="structure.html">
+            
+                    
+                    目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="objects.html">
+            
+                <a href="objects.html">
+            
+                    
+                    内置对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="context.html">
+            
+                <a href="context.html">
+            
+                    
+                    Context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="controller.html">
+            
+                <a href="controller.html">
+            
+                    
+                    Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="service.html">
+            
+                <a href="service.html">
+            
+                    
+                    Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="helper.html">
+            
+                <a href="helper.html">
+            
+                    
+                    Helper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.8" data-path="middleware.html">
+            
+                <a href="middleware.html">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="logger.html">
+            
+                <a href="logger.html">
+            
+                    
+                    日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="docs.html">
+            
+                <a href="docs.html">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    进阶功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../advanced/styles.html">
+            
+                <a href="../advanced/styles.html">
+            
+                    
+                    代码风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >中间件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4E2D;&#x95F4;&#x4EF6;">&#x4E2D;&#x95F4;&#x4EF6;</h1>
+<p>Salak&#x662F;&#x57FA;&#x4E8E;Koa 2.0&#x5F00;&#x53D1;&#xFF0C;&#x6240;&#x4EE5;Salak&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x5F62;&#x5F0F;&#x4E0E;Koa&#x4E2D;&#x95F4;&#x4EF6;&#x4E00;&#x81F4;&#x3002;</p>
+<h2 id="&#x7F16;&#x5199;&#x4E2D;&#x95F4;&#x4EF6;">&#x7F16;&#x5199;&#x4E2D;&#x95F4;&#x4EF6;</h2>
+<h3 id="&#x5199;&#x6CD5;">&#x5199;&#x6CD5;</h3>
+<pre class="language-"><code class="lang-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">(</span>options<span class="token punctuation">,</span> app<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// do something</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FD4;&#x56DE; async function&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x4E2D;&#x95F4;&#x53EA;&#x4F1A;&#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x52A0;&#x5165;&#x5230;&#x4E2D;&#x95F4;&#x4EF6;&#x6267;&#x884C;&#x961F;&#x5217;&#x4E2D;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x8FD9;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x505A;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x5982;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x4EE5;&#x5199;&#x7B80;&#x5355;&#x7684;error&#x4E2D;&#x95F4;&#x4EF6;&#x4E3A;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">(</span>options<span class="token punctuation">,</span> app<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  options <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    status<span class="token punctuation">:</span> <span class="token number">500</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">404</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ctx<span class="token punctuation">.</span><span class="token keyword">throw</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      app<span class="token punctuation">.</span>logger<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+
+      ctx<span class="token punctuation">.</span>status <span class="token operator">=</span> err<span class="token punctuation">.</span>status <span class="token operator">||</span> options<span class="token punctuation">.</span>status
+      ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> err<span class="token punctuation">.</span>message
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;&#x4E2D;&#x95F4;&#x4EF6;">&#x4F7F;&#x7528;&#x4E2D;&#x95F4;&#x4EF6;</h3>
+<h4 id="&#x6A21;&#x5757;&#x914D;&#x7F6E;&#x4E2D;&#x4F7F;&#x7528;">&#x6A21;&#x5757;&#x914D;&#x7F6E;&#x4E2D;&#x4F7F;&#x7528;</h4>
+<p>&#x901A;&#x8FC7;&#x914D;&#x7F6E;middleware&#x5B57;&#x6BB5;&#xFF0C;&#x4E2D;&#x95F4;&#x4EF6;&#x914D;&#x7F6E;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;key&#x5373;&#x53EF;</p>
+<p>middleware&#x914D;&#x7F6E;&#x6709;&#x4E24;&#x79CD;&#x5199;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>&#x76F4;&#x63A5;&#x5199;&#x4E2D;&#x95F4;&#x4EF6;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5982;error.js:</li>
+</ul>
+<pre class="language-"><code class="lang-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  middleware<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&apos;error&apos;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  error<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    status<span class="token punctuation">:</span> <span class="token number">500</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>&#x5199;&#x4E2D;&#x95F4;&#x4EF6;&#x540D;&#x5B57;&#xFF0C;&#x4EE5;&#x53CA;&#x4E2D;&#x95F4;&#x5BF9;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5982;&#xFF1A;</li>
+</ul>
+<pre class="language-"><code class="lang-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  middleware<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">&apos;error&apos;</span><span class="token punctuation">,</span>
+      <span class="token keyword">package</span><span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;path/error&apos;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="&#x63A7;&#x5236;&#x5668;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;">&#x63A7;&#x5236;&#x5668;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;</h4>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token string">&apos;error&apos;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>module<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  status<span class="token punctuation">:</span> <span class="token number">503</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="&#x4E2D;&#x95F4;&#x4EF6;&#x67E5;&#x8BE2;&#x539F;&#x5219;">&#x4E2D;&#x95F4;&#x4EF6;&#x67E5;&#x8BE2;&#x539F;&#x5219;</h3>
+<p>&#x5728;&#x6A21;&#x5757;&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x529F;&#x80FD;&#x6A21;&#x5757;&#x4E2D;&#x95F4;&#x4EF6; =&#x300B;&#x516C;&#x5171;&#x6A21;&#x5757;&#x4E2D;&#x95F4;&#x4EF6; =&#x300B;&#x6846;&#x67B6;&#x5185;&#x5EFA;&#x4E2D;&#x95F4;&#x4EF6;</p>
+<p>&#x5728;&#x63A7;&#x5236;&#x5668;&#x4E2D;&#xFF0C;&#x6307;&#x5B9A;&#x6A21;&#x5757;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x67E5;&#x8BE2;&#x4E0D;&#x5230;&#xFF0C;&#x4F1A;&#x67E5;&#x8BE2;&#x6846;&#x67B6;&#x5185;&#x5EFA;&#x4E2D;&#x95F4;&#x4EF6;</p>
+<h2 id="&#x901A;&#x7528;&#x914D;&#x7F6E;">&#x901A;&#x7528;&#x914D;&#x7F6E;</h2>
+<p>&#x65E0;&#x8BBA;&#x662F;&#x5728;&#x6A21;&#x5757;&#x4E2D;&#x52A0;&#x8F7D;&#xFF0C;&#x8FD8;&#x662F;&#x5728;&#x63A7;&#x5236;&#x5668;&#x52A0;&#x8F7D;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x90FD;&#x652F;&#x6301;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#xFF1A;</p>
+<ul>
+<li>enable: &#x4E2D;&#x95F4;&#x4EF6;&#x662F;&#x5426;&#x5F00;&#x542F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;true</li>
+</ul>
+<h2 id="&#x6846;&#x67B6;&#x9ED8;&#x8BA4;&#x4E2D;&#x95F4;&#x4EF6;">&#x6846;&#x67B6;&#x9ED8;&#x8BA4;&#x4E2D;&#x95F4;&#x4EF6;</h2>
+<ul>
+<li>output</li>
+<li>bodyparser</li>
+<li>cors</li>
+<li>jsonp</li>
+<li>view</li>
+<li>error</li>
+<li>swagger</li>
+</ul>
+<h3 id="output">output</h3>
+<p>&#x5355;&#x6B21;&#x8C03;&#x7528;&#xFF0C;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;app.output&#xFF0C;&#x63A7;&#x5236;&#x8F93;&#x51FA;json&#x7684;&#x9ED8;&#x8BA4;&#x5B57;&#x6BB5;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x5B57;&#x6BB5;&#x540D;&#xFF1A;</p>
+<ul>
+<li>code: &#x8F93;&#x51FA;&#x63A5;&#x53E3;&#x72B6;&#x6001;</li>
+<li>msg: &#x8F93;&#x51FA;&#x63A5;&#x53E3;&#x4FE1;&#x606F;</li>
+<li>data: &#x8F93;&#x51FA;&#x63A5;&#x53E3;&#x6570;&#x636E;</li>
+<li>details: &#x9519;&#x8BEF;&#x76F8;&#x5173;</li>
+</ul>
+<h3 id="bodyparser">bodyparser</h3>
+<p>&#x91C7;&#x7528;&#x4E86;koa-bodyparser&#xFF0C;&#x9ED8;&#x8BA4;&#x652F;&#x6301;json&#x3001;form&#x89E3;&#x6790;</p>
+<p>&#x914D;&#x7F6E;&#x53EF;&#x53C2;&#x8003;<a href="https://github.com/koajs/bodyparser#options" target="_blank">koa-bodyparser</a></p>
+<p><strong>&#x6CE8;&#xFF1A;koa-bodyparser&#x5DF2;&#x7ECF;&#x4E0D;&#x5305;&#x542B;multipart/form-data&#x89E3;&#x6790;</strong></p>
+<h3 id="cors">cors</h3>
+<p>&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x4E2D;&#x95F4;&#x4EF6;</p>
+<p>&#x914D;&#x7F6E;&#xFF1A;</p>
+<ul>
+<li>allowMethods &#x5141;&#x8BB8;&#x7684;&#x65B9;&#x6CD5;</li>
+<li>exposeHeaders &#x5141;&#x8BB8;&#x66B4;&#x9732;&#x7684;&#x54CD;&#x5E94;&#x9996;&#x90E8;</li>
+<li>allowHeaders &#x5141;&#x8BB8;&#x7684;&#x5934;&#x90E8;</li>
+<li>maxAge &#x7528;&#x4E8E;&#x8BBE;&#x7F6E;preflight&#x7F13;&#x5B58;&#x65F6;&#x95F4;</li>
+<li>credentials &#x662F;&#x5426;&#x5141;&#x8BB8;cookie</li>
+</ul>
+<h3 id="jsonp">jsonp</h3>
+<p>jsonp&#x8F93;&#x51FA;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5305;&#x88C5;callback</p>
+<h3 id="view">view</h3>
+<p>&#x89C6;&#x56FE;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x57FA;&#x4E8E;<a href="https://github.com/queckezz/koa-views" target="_blank">koa-views</a></p>
+<p>&#x914D;&#x7F6E;(&#x5373;<a href="https://github.com/queckezz/koa-views#viewsroot-opts" target="_blank">views opts</a>)&#xFF1A;</p>
+<ul>
+<li>extension</li>
+<li>map</li>
+<li>engineSource</li>
+<li>options</li>
+</ul>
+<h3 id="error">error</h3>
+<p>error&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x5904;&#x7406;&#x5E94;&#x7528;&#x8BF7;&#x6C42;&#x8FC7;&#x7A0B;&#x4E2D;&#x62A5;&#x9519;</p>
+<p>&#x914D;&#x7F6E;:</p>
+<ul>
+<li>status: &#x72B6;&#x6001;&#x7801;&#x8BBE;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&apos;auto&apos;&#xFF0C;&#x8868;&#x793A;&#x6839;&#x636E;&#x51FA;&#x9519;&#x72B6;&#x6001;&#x6765;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;http&#x54CD;&#x5E94;&#x72B6;&#x6001;&#x7801;&#xFF1B;&#x5426;&#x5219;&#x4E3A;200&#x72B6;&#x6001;&#x7801;</li>
+<li>type: &#x9519;&#x8BEF;&#x8F93;&#x51FA;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;json&#x6216;&#x8005;html&#xFF0C;&#x65E0;&#x914D;&#x7F6E;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6846;&#x67B6;&#x6839;&#x636E;accept-type&#x81EA;&#x52A8;&#x9009;&#x62E9;</li>
+<li>template: &#x9519;&#x8BEF;&#x89C6;&#x56FE;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x6846;&#x67B6;&#x81EA;&#x5E26;&#x7684;error.ejs</li>
+</ul>
+<h3 id="swagger">swagger</h3>
+<p>&#x5355;&#x6B21;&#x8C03;&#x7528;&#xFF0C;&#x7528;&#x4E8E;&#x6CE8;&#x518C;&#x6587;&#x6863;&#x8DEF;&#x7531;&#x4EE5;&#x53CA;json&#x6240;&#x5728;&#x8DEF;&#x7531;</p>
+<p>&#x914D;&#x7F6E;&#xFF1A;</p>
+<ul>
+<li>apiDocs: api&#x8BBF;&#x95EE;&#x5730;&#x5740;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;/api-docs</li>
+<li>json: api json&#x8BBF;&#x95EE;&#x5730;&#x5740;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;/api-json</li>
+<li>html: api &#x6E32;&#x67D3;&#x9ED8;&#x8BA4;&#xFF0C;&#x9ED8;&#x8BA4;&#x91C7;&#x7528;<a href="https://github.com/Rebilly/ReDoc" target="_blank">ReDoc</a></li>
+</ul>
+<h3 id="&#x66FF;&#x6362;&#x9ED8;&#x8BA4;&#x4E2D;&#x95F4;&#x4EF6;">&#x66FF;&#x6362;&#x9ED8;&#x8BA4;&#x4E2D;&#x95F4;&#x4EF6;</h3>
+<p>&#x5728;&#x6A21;&#x5757;middleware&#x4E2D;&#x7F16;&#x5199;&#x540C;&#x540D;&#x4E2D;&#x95F4;&#x4EF6;&#x5373;&#x53EF;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="helper.html" class="navigation navigation-prev " aria-label="Previous page: Helper">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="logger.html" class="navigation navigation-next " aria-label="Next page: 日志">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"中间件","level":"1.3.8","depth":2,"next":{"title":"日志","level":"1.3.9","depth":2,"path":"basics/logger.md","ref":"basics/logger.md","articles":[]},"previous":{"title":"Helper","level":"1.3.7","depth":2,"path":"basics/helper.md","ref":"basics/helper.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","prism-themes","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SalakJS/salak"},"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"fontsettings":{"theme":"sepia","family":"sans","size":2},"search-plus":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Salak文档","gitbook":"*","description":"Salak是基于Koa开发的web应用框架，用于快速开发应用"},"file":{"path":"basics/middleware.md","mtime":"2017-12-26T17:07:36.922Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-26T17:17:18.549Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

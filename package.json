@@ -1,0 +1,33 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "docs for salak",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-prism": "^2.3.0",
+    "gitbook-plugin-prism-themes": "^0.0.2",
+    "gitbook-plugin-search-plus": "^1.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4"
+  },
+  "scripts": {
+    "deploy": "node_modules/.bin/gulp deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalakJS/docs.git"
+  },
+  "keywords": [
+    "salak",
+    "docs"
+  ],
+  "author": "wengeek <wenwei897684475@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SalakJS/docs/issues"
+  },
+  "homepage": "https://github.com/SalakJS/docs#readme"
+}

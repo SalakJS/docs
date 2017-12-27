@@ -98,12 +98,15 @@ this.middleware('error', this.module, {
 
 ## 框架默认中间件
 
+框架自带中间件默认执行顺序：
+
 - output
+- static
 - bodyparser
 - cors
 - jsonp
-- view
 - error
+- view
 - swagger
 
 ### output
@@ -116,6 +119,15 @@ this.middleware('error', this.module, {
 - msg: 输出接口信息
 - data: 输出接口数据
 - details: 错误相关
+
+### static
+
+静态资源渲染，采用koa-static
+
+配置：
+
+- root: 默认为应用public
+- opts: 同[koa-static opts](https://github.com/koajs/static#options)
 
 ### bodyparser
 

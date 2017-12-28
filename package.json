@@ -10,11 +10,13 @@
     "gitbook-plugin-search-plus": "^1.0.3"
   },
   "devDependencies": {
+    "gitbook-cli": "^2.3.2",
     "gulp": "^3.9.1",
     "gulp-gh-pages": "^0.5.4"
   },
   "scripts": {
-    "deploy": "node_modules/.bin/gulp deploy"
+    "start": "gitbook serve",
+    "deploy": "gitbook build && gulp deploy"
   },
   "repository": {
     "type": "git",

@@ -4,3 +4,7 @@ node_js:
   - 7.6
 script:
   - npm run deploy
+env:
+  global:
+    - GH_REF: github.com/SalakJS/docs.git
+    - secure: "vSlCblWlz/5+9eMZ4crDrIuoap4omtKwaDgT0VL/L/Pc5cTIVzkOKoEkN5pdWCOaJ1EBLxeTUoVlBI455z+sQwRIVvXTHnBpDj8Znes+D1MWxVWqc1eOTfSkub0wmfC799LRy61zo8xV8IMPUGms4oWQtKswiX4z8aZU2Hwy45WUhlSVz5SeXMTvrffGT9b9MbYwdm2NWlIT3TDjCKTyMkiZWAFKpP9B2oM0t5x4uMrd9qAjZpQBf2hy3tsaMheRnhRMNW3UH7zb+fv4spEcf5QFjuQs+DCBhblvELsPQUq9tK7Xec4SYTmp/uh13z/SxbOZiDY0SJ4cj9W0KQQwJ+xM6Mf5HcBxq84C7w7s8hjUHFY0DbcJ+PwfD/t5Sf7f4TF7Pcb+vqln+pVhr/DxunKuj2nwMx3hPxpQH0aX6lHeA0+URWdHMcUhQZ8sA1LbKSjmEhcq6t7MwQ4mEJsZpj5sFwykC2UnX59n7QDAq/qFpRrYtwRDzxiQ12Fs9Ofn27TORAN/9Ws+An2fLB7odHtBcbw//Cv6AonVlLjoB/1aqaOn86KPnZI9ogeQczyNW110MtFmSlzSdPr5ekbqpgvmOLfNs0qnqfeazwlfhTDzRuUKwcCnIxtszHlkK0TtfgGL8C11e/4bGZ7qh0OOp17CXWkxZ8qkwlA9dBrjfuo="

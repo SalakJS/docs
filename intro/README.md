@@ -9,7 +9,35 @@
 
 ## 脚手架快速搭建
 
-@Todo 待补充
+为了快速搭建项目，开发了脚手架[salak-cli](https://github.com/SalakJS/salak-cli)
+
+### 安装脚手架
+
+```sh
+$ npm install -g salak-cli
+```
+
+### 创建项目
+
+以simple模板为例
+
+```sh
+$ salak-init simple demo
+```
+
+![simple-demo](../images/simple-demo.png)
+
+### 安装依赖并启动
+
+```sh
+$ cd demo
+$ npm install
+$ npm start
+```
+
+至此，项目就可以跑起来了。
+
+接下来，我们不使用脚手架，一步一步搭建项目：
 
 ## 初始化项目
 

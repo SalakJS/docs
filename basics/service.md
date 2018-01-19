@@ -1,6 +1,6 @@
 # Service
 
-Service基于Context，也是在调用过程中实例化。
+Service, 继承自[Context](./context.html)，在调用过程中实例化。
 
 一般来说，Service用来封装业务逻辑，主要有以下几点好处：
 

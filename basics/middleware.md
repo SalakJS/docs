@@ -173,6 +173,7 @@ error中间件，处理应用请求过程中报错
 - status: 状态码设置，默认为'auto'，表示根据出错状态来自动设置http响应状态码；否则为200状态码
 - type: 错误输出类型，可以为json或者html，无配置情况下，框架根据accept-type自动选择
 - template: 错误视图路径，默认为框架自带的error.ejs
+- logIgnoreNotFound: 日志是否不记录404，默认为false，表示不忽略
 
 ### swagger
 

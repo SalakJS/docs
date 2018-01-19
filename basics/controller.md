@@ -34,10 +34,10 @@ action: type: string|Array 执行的action
 ```javascript
 this.middleware('test') // 表示所有方法都会执行test中间件
 this.middleware('auth').except('logout') // 表示actionLogout方法不执行auth中间件
-this.middleware('cors').except('index') // 表示只有actionIndex方法执行cors中间件
+this.middleware(['cors', 'error']).only('index') // 表示只有actionIndex方法执行cors中间件和error中间件
 ```
 
-#### behavoiors ()
+#### behaviors ()
 
 静态方法，可选，用于定义路由规则以及校验规则，需要返回一个对象，包含两个字段routes、rules。
 

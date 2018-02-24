@@ -74,7 +74,7 @@ const path = require('path')
 module.exports = {
   logger: {
     root: path.join('/tmp', 'logs'),
-    injectConsole = true,
+    injectConsole: true,
     capture: {
       enable: true,
       category: 'http',
@@ -104,6 +104,7 @@ module.exports = {
         level: 'error'
       }
     },
+    autoCategory: true,
     defaultLevel: 'info'
   }
 }

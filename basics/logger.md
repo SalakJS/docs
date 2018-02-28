@@ -60,7 +60,7 @@ error: {
 
 ### defaultLevel
 
-日志默认级别，有debug, info, warn, error
+日志默认级别，有debug, info, warn, error。默认情况下，开发环境为debug，生产环境为info。
 
 ### autoCategory
 

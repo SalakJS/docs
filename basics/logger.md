@@ -94,13 +94,13 @@ module.exports = {
       user: {
         type: 'dateFile',
         filename: 'user/user.log',
-        pattern: 'YYYY-MM',
+        datePattern: 'YYYY-MM',
         level: 'error'
       },
       error: {
         type: 'levelFilter',
         filename: 'error/error.log',
-        pattern: 'YYYY-MM-DD'
+        datePattern: 'YYYY-MM-DD'
         level: 'error'
       }
     },

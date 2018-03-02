@@ -27,6 +27,7 @@ Object，http请求日志配置，会详细记录请求来源以及响应结果
 - enable: 是否开启，默认为true,
 - category: 采用哪个category来保存请求日志
 - level: 日志记录级别，默认为auto，自动根据状态码输出到对应的日志
+- ignoreHeaderKeys: 数组，用于忽略记录某些请求头到日志中，默认为['cookie']
 
 ### categories
 

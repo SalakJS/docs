@@ -37,7 +37,7 @@ Object，格式如下：
 category: {
   type: 'dateFile',
   filename: 'xxx/xxx.log',
-  dataPattern: 'YYYY-MM-DD',
+  datePattern: 'YYYY-MM-DD',
   level: 'info'
 }
 ```
@@ -47,6 +47,8 @@ category: {
 - datePattern：dateFile下存在，用于切割日志
 - level: 日志记录级别
 - transport：同winston3，用于配置需要输出到远程日志服务器，配置了transport会忽略dateFile的配置
+- maxSize: 文件大小，在dateFile下有效
+- maxFiles: 最大文件存放数，在dateFile下有效
 
 type为logLevelFilter如下：
 

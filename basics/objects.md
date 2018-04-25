@@ -4,6 +4,15 @@
 
 Salak，基于Koa，在一个应用中，只会被实例化一次
 
+### constructor (options)
+
+Options:
+
+- baseDir: 应用根目录，默认为当前执行目录
+- opts: 配置
+  - opts.root: 根模块，默认为common
+  - opts.readyTimeout: 框架启动超时时间，默认为120000，即120s
+
 ### 实例获取方式
 
 在中间件中，第二个参数就是app实例，应用会自动加载进去

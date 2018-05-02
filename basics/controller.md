@@ -18,7 +18,7 @@
 
 中间件调用，只允许出现在constructor中，用于在进入action之前，执行相应的的中间件
 
-- name: 中间件名称
+- name: 中间件名称，或控制器内中间件
 - module: 可选，中间件所在的模块，默认为当前模块，也就是默认会加载当前模块的中间件
 - options: 可选， 配置，会往上回溯合并配置：options => module config => common config
 
@@ -35,6 +35,9 @@ action: type: string|Array 执行的action
 this.middleware('test') // 表示所有方法都会执行test中间件
 this.middleware('auth').except('logout') // 表示actionLogout方法不执行auth中间件
 this.middleware(['cors', 'error']).only('index') // 表示只有actionIndex方法执行cors中间件和error中间件
+this.middleware(async (ctx, next) => {
+  await next()
+})
 ```
 
 #### behaviors ()

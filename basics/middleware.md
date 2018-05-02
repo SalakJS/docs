@@ -12,6 +12,15 @@ module.exports = (options, app) => {
 }
 ```
 
+Or:
+
+```javascript
+module.export = async (ctx, next) => {
+  // do something
+  await next()
+}
+```
+
 如果没有返回 async function，那么该中间只会在初始化时调用一次，否则会加入到中间件执行队列中。
 
 那么，这就可以用中间件的方式来做一些初始化的工作，如数据库连接。
@@ -81,6 +90,14 @@ module.exports = {
 ```javascript
 this.middleware('error', this.module, {
   status: 503
+})
+```
+
+控制器构造函数还支持控制器内自定义中间件，如
+
+```javascript
+this.middleware(async (ctx, next) => {
+  await next()
 })
 ```
 

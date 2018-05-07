@@ -58,7 +58,12 @@ result:
 ```javascript
 module.exports = {
   httpClient: {
-    timeout: 100 // 100ms
+    timeout: 100, // 100ms
+    retry: 2,
+    redirects: 0,
+    dataType: 'json',
+    contentType: 'json',
+    headers: { 'User-Agent': 'curl' }
   }
 }
 ```

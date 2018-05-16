@@ -12,6 +12,7 @@
   * [Helper](basics/helper.md)
   * [中间件](basics/middleware.md)
   * [日志](basics/logger.md)
+  * [定时任务](basics/schedule.md)
   * [启动自定义](basics/start.md)
   * [文档](basics/docs.md)
 * [进阶功能](advanced/README.md)

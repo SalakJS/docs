@@ -52,11 +52,3 @@ restful 形式 控制器
 ## Joi
 
 refer: [https://github.com/hapijs/joi](https://github.com/hapijs/joi)
-
-## makeOutputSchema (data)
-
-type: Function
-
-@return: Joi object
-
-配合output插件使用，用于便捷校验响应数据

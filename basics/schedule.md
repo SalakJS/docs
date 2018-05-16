@@ -54,7 +54,7 @@ module.exports = UpdateCache
 
 定时任务将在特定的时间执行定时任务，cron表达式采用[cron-parser](https://github.com/harrisiirak/cron-parser)解析
 
-```shell
+```bash
 *    *    *    *    *    *
 ┬    ┬    ┬    ┬    ┬    ┬
 │    │    │    │    │    |
@@ -81,7 +81,7 @@ static timer () {
 框架提供了三种类型，all, single, worker，默认为all
 
 - all: 表示所有线程都会运行
-- single: 表示在多机多线程情况下，只有唯一一台机器伤的一个进程会运行，需要锁
+- single: 表示在多机多线程情况下，只有唯一一台机器上的一个进程会运行，需要锁
 - worker：表示每个机器只有唯一一个线程会运行，需要锁
 
 其他参数:
@@ -114,8 +114,8 @@ module.exports = {
 参数列表：
 
 - enable: 表示定时任务是否需要开启，默认为true
-- prefix: 用于redis锁，key前缀
-- Store: 编写Store可参考[salak-schedule-store](https://github.com/SalakJS/salak-schedule#write-a-store)，默认为redLock，需要提供app.redis，引入[salak-redis](https://github.com/SalakJS/salak-redis)即可
+- prefix: 用于锁，key前缀，默认为salakTimer
+- Store: timer type 为 worker或single才需要，编写Store可参考[salak-schedule-store](https://github.com/SalakJS/salak-schedule#write-a-store)，默认为redLock，需要提供app.redis，引入[salak-redis](https://github.com/SalakJS/salak-redis)即可
 - options: Store实例需要的参数
 
 ## API

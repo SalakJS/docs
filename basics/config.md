@@ -10,11 +10,14 @@
 
 ```
 config
+├── .local.js
 ├── default.js
 ├── production.js
 ├── development.js
 └── test.js
 ```
+
+.local 一般用于存放本地开发相关的配置，如密码，需要在.gitignore添加该文件，防止被上传
 
 ## 配置写法
 
@@ -38,7 +41,8 @@ module.exports = {
 -> 公共模块默认配置 default.js
 -> 公共模块环境配置 development.js
 -> 功能模块默认配置 default.js
--> 功能模块环境配置 development
+-> 功能模块环境配置 development.js
+-> 本地配置 .local.js 存在的情况下
 ```
 
 ## 配置使用规则

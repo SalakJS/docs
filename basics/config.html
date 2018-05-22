@@ -89,9 +89,9 @@
         
         
     
-        <li class="chapter " data-level="1.1" data-path="../../docs/">
+        <li class="chapter " data-level="1.1" data-path="../">
             
-                <a href="../../docs/">
+                <a href="../">
             
                     
                     Salak简介
@@ -365,7 +365,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../docs" >配置</a>
+        <a href=".." >配置</a>
     </h1>
 </div>
 
@@ -386,11 +386,13 @@
 <h2 id="&#x591A;&#x73AF;&#x5883;&#x914D;&#x7F6E;">&#x591A;&#x73AF;&#x5883;&#x914D;&#x7F6E;</h2>
 <p>&#x6846;&#x67B6;&#x652F;&#x6301;&#x6839;&#x636E;&#x73AF;&#x5883;&#x6765;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#xFF0C;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x73AF;&#x5883;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre class="language-"><code>config
+&#x251C;&#x2500;&#x2500; .local.js
 &#x251C;&#x2500;&#x2500; default.js
 &#x251C;&#x2500;&#x2500; production.js
 &#x251C;&#x2500;&#x2500; development.js
 &#x2514;&#x2500;&#x2500; test.js
-</code></pre><h2 id="&#x914D;&#x7F6E;&#x5199;&#x6CD5;">&#x914D;&#x7F6E;&#x5199;&#x6CD5;</h2>
+</code></pre><p>.local &#x4E00;&#x822C;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x5BC6;&#x7801;&#xFF0C;&#x9700;&#x8981;&#x5728;.gitignore&#x6DFB;&#x52A0;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x9632;&#x6B62;&#x88AB;&#x4E0A;&#x4F20;</p>
+<h2 id="&#x914D;&#x7F6E;&#x5199;&#x6CD5;">&#x914D;&#x7F6E;&#x5199;&#x6CD5;</h2>
 <p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8FD4;&#x56DE;Object&#xFF0C;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x6846;&#x67B6;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
 <pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;path&apos;</span><span class="token punctuation">)</span>
 
@@ -405,7 +407,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <pre class="language-"><code>-&gt; &#x516C;&#x5171;&#x6A21;&#x5757;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E; default.js
 -&gt; &#x516C;&#x5171;&#x6A21;&#x5757;&#x73AF;&#x5883;&#x914D;&#x7F6E; development.js
 -&gt; &#x529F;&#x80FD;&#x6A21;&#x5757;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E; default.js
--&gt; &#x529F;&#x80FD;&#x6A21;&#x5757;&#x73AF;&#x5883;&#x914D;&#x7F6E; development
+-&gt; &#x529F;&#x80FD;&#x6A21;&#x5757;&#x73AF;&#x5883;&#x914D;&#x7F6E; development.js
+-&gt; &#x672C;&#x5730;&#x914D;&#x7F6E; .local.js &#x5B58;&#x5728;&#x7684;&#x60C5;&#x51B5;&#x4E0B;
 </code></pre><h2 id="&#x914D;&#x7F6E;&#x4F7F;&#x7528;&#x89C4;&#x5219;">&#x914D;&#x7F6E;&#x4F7F;&#x7528;&#x89C4;&#x5219;</h2>
 <p>&#x540E;&#x9762;&#x7684;&#x914D;&#x7F6E;&#x4F1A;&#x8986;&#x76D6;&#x524D;&#x9762;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5728;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x4F7F;&#x7528;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5C06;&#x662F;&#x6A21;&#x5757;&#x914D;&#x7F6E;&#x4E0E;&#x901A;&#x7528;&#x914D;&#x7F6E;&#x5408;&#x5E76;&#x540E;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
 <h2 id="&#x901A;&#x7528;&#x6A21;&#x5757;&#x5E38;&#x7528;&#x914D;&#x7F6E;&#x5B57;&#x6BB5;">&#x901A;&#x7528;&#x6A21;&#x5757;&#x5E38;&#x7528;&#x914D;&#x7F6E;&#x5B57;&#x6BB5;</h2>
@@ -505,7 +508,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"配置","level":"1.3.3","depth":2,"next":{"title":"Context","level":"1.3.4","depth":2,"path":"basics/context.md","ref":"basics/context.md","articles":[]},"previous":{"title":"内置对象","level":"1.3.2","depth":2,"path":"basics/objects.md","ref":"basics/objects.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","prism-themes","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SalakJS/salak"},"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"fontsettings":{"theme":"white","family":"sans","size":2},"search-plus":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Salak文档","gitbook":"*","description":"Salak是基于Koa开发的web应用框架，用于快速开发应用"},"file":{"path":"basics/config.md","mtime":"2017-12-27T03:10:59.742Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-16T08:18:18.269Z"},"basePath":"../../docs","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"配置","level":"1.3.3","depth":2,"next":{"title":"Context","level":"1.3.4","depth":2,"path":"basics/context.md","ref":"basics/context.md","articles":[]},"previous":{"title":"内置对象","level":"1.3.2","depth":2,"path":"basics/objects.md","ref":"basics/objects.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","prism-themes","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SalakJS/salak"},"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"fontsettings":{"theme":"white","family":"sans","size":2},"search-plus":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Salak文档","gitbook":"*","description":"Salak是基于Koa开发的web应用框架，用于快速开发应用"},"file":{"path":"basics/config.md","mtime":"2018-05-22T10:32:05.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-22T10:32:48.386Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

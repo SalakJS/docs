@@ -28,7 +28,7 @@ $ npm install -g salak-cli
 $ salak-init simple demo
 ```
 
-![simple-demo](/img/doc/simple-demo.png)
+![simple-demo](/docs/img/doc/simple-demo.png)
 
 ### 安装依赖并启动
 

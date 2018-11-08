@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>快速入门 · Salak</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="本篇将一步步搭建一个salak应用，让你对salak有一个初步的了解"/><meta name="docsearch:language" content="zh-cn"/><meta property="og:title" content="快速入门 · Salak"/><meta property="og:type" content="website"/><meta property="og:url" content="https://salakjs.github.io/index.html"/><meta property="og:description" content="本篇将一步步搭建一个salak应用，让你对salak有一个初步的了解"/><meta property="og:image" content="https://salakjs.github.io/img/salak.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://salakjs.github.io/img/salak.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/i18n.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-cn"><img class="logo" src="/img/salak.png" alt="Salak"/><h2 class="headerTitleWithLogo">Salak</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-cn/introduction.html" target="_self">文档</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/quick.html">English</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span><li class=""><a href="https://github.com/salakjs/salak" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>新手入门</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">新手入门</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/introduction.html">简介</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-cn/quick.html">快速入门</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">基础功能</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/structure.html">目录结构</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/objects.html">内置对象</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/config.html">配置</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/middleware.html">中间件</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/router.html">路由</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/controller.html">Controller</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/behavior.html">Behavior</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/service.html">Service</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/schedule.html">定时任务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/extend.html">扩展</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/plugin.html">插件</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/logger.html">日志</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/doc.html">接口文档</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/init.html">启动自定义</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">进阶介绍</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/view.html">视图</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/database.html">数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/i18n.html">国际化</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/curl.html">CURL</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/loader.html">Loader</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">扩展功能</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/multi-module.html">多模块项目</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/typescript.html">Typescript</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">快速入门</h1></header><article><div><span><p>本篇将一步步搭建一个salak应用，让你对salak有一个初步的了解</p>
+<h2><a class="anchor" aria-hidden="true" id="环境准备"></a><a href="#环境准备" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>环境准备</h2>
+<ul>
+<li>操作系统：支持Mac、Linux以及Windows</li>
+<li>运行环境：node &gt; 7.6</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="脚手架快速搭建"></a><a href="#脚手架快速搭建" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>脚手架快速搭建</h2>
+<p>为了快速搭建项目，开发了脚手架<a href="https://github.com/SalakJS/salak-cli">salak-cli</a></p>
+<h3><a class="anchor" aria-hidden="true" id="安装脚手架"></a><a href="#安装脚手架" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装脚手架</h3>
+<pre><code class="hljs css languages- sh">$ npm install -g salak-cli
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="创建项目"></a><a href="#创建项目" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建项目</h3>
+<p>以simple模板为例</p>
+<pre><code class="hljs css languages- sh">$ salak-init simple demo
+</code></pre>
+<p><img src="/img/doc/simple-demo.png" alt="simple-demo"></p>
+<h3><a class="anchor" aria-hidden="true" id="安装依赖并启动"></a><a href="#安装依赖并启动" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装依赖并启动</h3>
+<pre><code class="hljs css languages- sh">$ <span class="hljs-built_in">cd</span> demo
+$ npm install
+$ npm start
+</code></pre>
+<p>至此，项目就可以跑起来了。</p>
+<p>接下来，我们不使用脚手架，一步一步搭建项目：</p>
+<h2><a class="anchor" aria-hidden="true" id="初始化项目"></a><a href="#初始化项目" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>初始化项目</h2>
+<pre><code class="hljs css languages- sh">$ mkdir salak-example
+$ <span class="hljs-built_in">cd</span> salak-example
+$ npm init
+$ npm i --save salak
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="编写主入口文件"></a><a href="#编写主入口文件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编写主入口文件</h2>
+<p>创建index.js</p>
+<pre><code class="hljs css languages- sh">$ vi index.js
+$ mkdir application
+</code></pre>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> Salak = <span class="hljs-built_in">require</span>(<span class="hljs-string">'salak'</span>)
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Salak({
+  <span class="hljs-attr">baseDir</span>: __dirname,
+  <span class="hljs-attr">opts</span>: {
+    <span class="hljs-attr">root</span>: <span class="hljs-string">'application'</span>
+  }
+})
+
+app.run(<span class="hljs-number">3000</span>)
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="配置文件"></a><a href="#配置文件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置文件</h2>
+<pre><code class="hljs css languages- sh">$ mkdir application/config
+$ <span class="hljs-built_in">cd</span> application/config
+$ vi default.js
+</code></pre>
+<pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">swagger</span>: {
+    <span class="hljs-attr">spec</span>: {
+      <span class="hljs-attr">info</span>: {
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'Example'</span>,
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'description for example'</span>,
+        <span class="hljs-attr">version</span>: <span class="hljs-string">'1.0.0'</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="编写控制器"></a><a href="#编写控制器" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编写控制器</h2>
+<pre><code class="hljs css languages- sh">$ <span class="hljs-built_in">cd</span> ..
+$ mkdir controller
+$ <span class="hljs-built_in">cd</span> controller
+$ vi test.js
+</code></pre>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> { Controller } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'salak'</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span> </span>{
+  actionIndex () {
+    <span class="hljs-keyword">this</span>.sendJson(<span class="hljs-number">0</span>, <span class="hljs-string">'ok'</span>, {
+      <span class="hljs-attr">id</span>: <span class="hljs-keyword">this</span>.query.id || <span class="hljs-string">'unknow'</span>
+    })
+  }
+}
+
+<span class="hljs-built_in">module</span>.exports = Test
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="编写behavior"></a><a href="#编写behavior" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编写Behavior</h2>
+<pre><code class="hljs css languages- sh">$ <span class="hljs-built_in">cd</span> ..
+$ mkdir behavior
+$ vi test.js
+</code></pre>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> { Behavior } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'salak'</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Behavior</span> </span>{
+  actionIndex () {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">meta</span>: {
+        <span class="hljs-attr">summary</span>: <span class="hljs-string">'测试接口'</span>,
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'第一个应用接口'</span>
+      },
+      <span class="hljs-attr">validate</span>: {
+        <span class="hljs-attr">query</span>: {
+          <span class="hljs-attr">id</span>: Joi.number().description(<span class="hljs-string">'标示'</span>)
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="启动服务"></a><a href="#启动服务" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动服务</h2>
+<pre><code class="hljs css languages- sh">$ <span class="hljs-built_in">cd</span> ../..
+$ node index
+</code></pre>
+<p>可以访问 <a href="http://localhost:3000/test">http://localhost:3000/test</a> 看到具体的数据</p>
+<p>如果访问 <a href="http://localhost:3000/test?id=error">http://localhost:3000/test?id=error</a> 将会显示具体的错误信息</p>
+<p>文档访问 <a href="http://localhost:3000/api-docs">http://localhost:3000/api-docs</a> 可以看到具体的接口详情</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-cn/introduction.html">← 简介</a><a class="docs-next button" href="/docs/zh-cn/structure.html">目录结构 →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#环境准备">环境准备</a></li><li><a href="#脚手架快速搭建">脚手架快速搭建</a><ul class="toc-headings"><li><a href="#安装脚手架">安装脚手架</a></li><li><a href="#创建项目">创建项目</a></li><li><a href="#安装依赖并启动">安装依赖并启动</a></li></ul></li><li><a href="#初始化项目">初始化项目</a></li><li><a href="#编写主入口文件">编写主入口文件</a></li><li><a href="#配置文件">配置文件</a></li><li><a href="#编写控制器">编写控制器</a></li><li><a href="#编写behavior">编写Behavior</a></li><li><a href="#启动服务">启动服务</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/salak.png" alt="Salak" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/zh-cn/introduction.html">Getting Started</a><a href="/docs/zh-cn/structure.html">Guides</a></div><div><h5>About</h5><a href="https://aotu.io" target="_blank">aotu.io</a></div></section><section class="copyright">Copyright © 2018 凹凸实验室</section></footer></div></body></html>

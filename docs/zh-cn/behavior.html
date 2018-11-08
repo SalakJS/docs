@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Behavior · Salak</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="当Action处理用户请求时，经常需要先校验用户提交过来的数据，然后才进行后续的操作，如果把这些逻辑代码放到Action中，会使Action变得比较冗长。"/><meta name="docsearch:language" content="zh-cn"/><meta property="og:title" content="Behavior · Salak"/><meta property="og:type" content="website"/><meta property="og:url" content="https://salakjs.github.io/index.html"/><meta property="og:description" content="当Action处理用户请求时，经常需要先校验用户提交过来的数据，然后才进行后续的操作，如果把这些逻辑代码放到Action中，会使Action变得比较冗长。"/><meta property="og:image" content="https://salakjs.github.io/img/salak.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://salakjs.github.io/img/salak.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/i18n.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-cn"><img class="logo" src="/img/salak.png" alt="Salak"/><h2 class="headerTitleWithLogo">Salak</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-cn/introduction.html" target="_self">文档</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/behavior.html">English</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span><li class=""><a href="https://github.com/salakjs/salak" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>基础功能</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">新手入门</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/introduction.html">简介</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/quick.html">快速入门</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">基础功能</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/structure.html">目录结构</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/objects.html">内置对象</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/config.html">配置</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/middleware.html">中间件</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/router.html">路由</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/controller.html">Controller</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-cn/behavior.html">Behavior</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/service.html">Service</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/schedule.html">定时任务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/extend.html">扩展</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/plugin.html">插件</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/logger.html">日志</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/doc.html">接口文档</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/init.html">启动自定义</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">进阶介绍</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/view.html">视图</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/database.html">数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/i18n.html">国际化</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/curl.html">CURL</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/loader.html">Loader</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">扩展功能</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/multi-module.html">多模块项目</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/typescript.html">Typescript</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Behavior</h1></header><article><div><span><p>当Action处理用户请求时，经常需要先校验用户提交过来的数据，然后才进行后续的操作，如果把这些逻辑代码放到Action中，会使Action变得比较冗长。</p>
+<p>所以，框架提供了Behavior层，用于处理数据校验，同时能够根据这些校验规则生成接口文档。</p>
+<h2><a class="anchor" aria-hidden="true" id="behavior"></a><a href="#behavior" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Behavior</h2>
+<p>Behavior目录存放在模块<code>${module}/behavior</code>下，Behavior类编写如下：</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-comment">// user/behavior/user.js</span>
+<span class="hljs-keyword">const</span> { Behavior, Joi } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'salak'</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Behavior</span> </span>{
+  actionIndex () {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">meta</span>: {
+        <span class="hljs-attr">summary</span>: <span class="hljs-string">''</span>,
+        <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+        <span class="hljs-attr">tags</span>: [<span class="hljs-string">'User'</span>]
+      },
+      <span class="hljs-attr">validate</span>: {
+        <span class="hljs-attr">query</span>: {
+          <span class="hljs-attr">id</span>: Joi.number().required()
+        }
+      }
+    }
+  }
+}
+
+<span class="hljs-built_in">module</span>.exports = User
+</code></pre>
+<p>其中，文件名和层级与Controller文件保持一致，Behavior中的Action与Controller中的Action一一对应。</p>
+<p>如果请求信息校验不通过，将会返回 <code>code：400</code> 的异常；如果响应信息校验不通过，将会返回 <code>code: 500</code> 的异常。同时会将异常详细信息默认写在details中。</p>
+<h2><a class="anchor" aria-hidden="true" id="方法"></a><a href="#方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>方法</h2>
+<p>Behavior 继承于 <a href="./objects.html#base">Base</a>，除Base之外的属性和方法，默认提供了<code>behavior</code>方法</p>
+<h3><a class="anchor" aria-hidden="true" id="behavior-name-module-thismodule"></a><a href="#behavior-name-module-thismodule" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>behavior (name, module = this.module)</h3>
+<p>用于调用其他Behavior实例。</p>
+<ul>
+<li><code>name</code>：Behavior名称</li>
+<li><code>module</code>：Behavior所在的模块，默认为当前模块</li>
+</ul>
+<p>@return Behavior实例</p>
+<h2><a class="anchor" aria-hidden="true" id="校验规则编写"></a><a href="#校验规则编写" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>校验规则编写</h2>
+<h3><a class="anchor" aria-hidden="true" id="meta"></a><a href="#meta" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>meta</h3>
+<p>描述接口详情，用于生成文档接口的描述。</p>
+<ul>
+<li><code>summary</code>：接口概要</li>
+<li><code>description</code>：接口描述</li>
+<li><code>tags</code>：接口标签</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="validate"></a><a href="#validate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>validate</h3>
+<p>接口校验规则采用 <a href="https://github.com/hapijs/joi/blob/master/API.md">Joi</a> 编写，用于校验数据和生成文档时接口字段描述。</p>
+<h4><a class="anchor" aria-hidden="true" id="query"></a><a href="#query" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>query</h4>
+<p>用户请求URL query参数规则定义，如：</p>
+<pre><code class="hljs css languages- javascript">query: {
+  <span class="hljs-attr">id</span>: Joi.number().required().description(<span class="hljs-string">'ID desc'</span>)
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="body"></a><a href="#body" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>body</h4>
+<p>用户请求body参数规则定义，如：</p>
+<pre><code class="hljs css languages- javascript">body: {
+  <span class="hljs-attr">title</span>: Joi.string().required().description(<span class="hljs-string">'Title'</span>)
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="params"></a><a href="#params" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>params</h4>
+<p>用户请求路由 params 规则定义，如：</p>
+<pre><code class="hljs css languages- javascript">params: {
+  <span class="hljs-attr">id</span>: Joi.number().min(<span class="hljs-number">5</span>).required().description(<span class="hljs-string">'ID desc'</span>)
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="header"></a><a href="#header" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>header</h4>
+<p>用户请求header规则定义，如：</p>
+<pre><code class="hljs css languages- javascript">header: {
+  <span class="hljs-string">'Authorization'</span>: Joi.string().required().description(<span class="hljs-string">'Auth'</span>)
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="formdata"></a><a href="#formdata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>formData</h4>
+<p>用户请求formData规则定义，如：</p>
+<pre><code class="hljs css languages- javascript">formData: {
+  <span class="hljs-attr">file</span>: Joi.binary()
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="responses"></a><a href="#responses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>responses</h4>
+<p>响应信息规则定义，由状态码和具体的校验规则组成，如：</p>
+<pre><code class="hljs css languages- javascript">responses: {
+  <span class="hljs-number">200</span>: {
+    <span class="hljs-attr">headers</span>: {
+    },
+    <span class="hljs-attr">body</span>: {
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><code>key</code>：statusCode，可以为状态码，或状态码范围，如：301-307</li>
+<li><code>value</code>：object，可包含headers、body字段</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="method"></a><a href="#method" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>method</h3>
+<p>接口请求HTTP Method，如需要将默认注册HTTP Method修改，更改该属性即可。</p>
+<h2><a class="anchor" aria-hidden="true" id="routes-规则自定义"></a><a href="#routes-规则自定义" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Routes 规则自定义</h2>
+<p>框架提供了静态方法routes，可以覆盖默认路由加载规则，推荐统一在behavior中定义。</p>
+<p>如：</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">static</span> get routes () {
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-string">'POST /:id'</span>: <span class="hljs-string">'create'</span>
+  }
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-cn/controller.html">← Controller</a><a class="docs-next button" href="/docs/zh-cn/service.html">Service →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#behavior">Behavior</a></li><li><a href="#方法">方法</a><ul class="toc-headings"><li><a href="#behavior-name-module-thismodule">behavior (name, module = this.module)</a></li></ul></li><li><a href="#校验规则编写">校验规则编写</a><ul class="toc-headings"><li><a href="#meta">meta</a></li><li><a href="#validate">validate</a></li><li><a href="#method">method</a></li></ul></li><li><a href="#routes-规则自定义">Routes 规则自定义</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/salak.png" alt="Salak" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/zh-cn/introduction.html">Getting Started</a><a href="/docs/zh-cn/structure.html">Guides</a></div><div><h5>About</h5><a href="https://aotu.io" target="_blank">aotu.io</a></div></section><section class="copyright">Copyright © 2018 凹凸实验室</section></footer></div></body></html>

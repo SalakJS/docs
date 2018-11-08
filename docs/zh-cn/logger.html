@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>日志 · Salak</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="日志在web开发中是必不可少的一部分，对于应用运行状态、问题排查有着很重要的作用。"/><meta name="docsearch:language" content="zh-cn"/><meta property="og:title" content="日志 · Salak"/><meta property="og:type" content="website"/><meta property="og:url" content="https://salakjs.github.io/index.html"/><meta property="og:description" content="日志在web开发中是必不可少的一部分，对于应用运行状态、问题排查有着很重要的作用。"/><meta property="og:image" content="https://salakjs.github.io/img/salak.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://salakjs.github.io/img/salak.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/i18n.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-cn"><img class="logo" src="/img/salak.png" alt="Salak"/><h2 class="headerTitleWithLogo">Salak</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-cn/introduction.html" target="_self">文档</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/logger.html">English</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span><li class=""><a href="https://github.com/salakjs/salak" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>基础功能</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">新手入门</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/introduction.html">简介</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/quick.html">快速入门</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">基础功能</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/structure.html">目录结构</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/objects.html">内置对象</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/config.html">配置</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/middleware.html">中间件</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/router.html">路由</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/controller.html">Controller</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/behavior.html">Behavior</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/service.html">Service</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/schedule.html">定时任务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/extend.html">扩展</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/plugin.html">插件</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-cn/logger.html">日志</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/doc.html">接口文档</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/init.html">启动自定义</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">进阶介绍</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/view.html">视图</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/database.html">数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/i18n.html">国际化</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/curl.html">CURL</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/loader.html">Loader</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">扩展功能</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/multi-module.html">多模块项目</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/typescript.html">Typescript</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">日志</h1></header><article><div><span><p>日志在web开发中是必不可少的一部分，对于应用运行状态、问题排查有着很重要的作用。</p>
+<p>框架提供的日志功能基于 <a href="https://github.com/winstonjs/winston">winston 3</a>。</p>
+<h2><a class="anchor" aria-hidden="true" id="主要特性"></a><a href="#主要特性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>主要特性</h2>
+<ul>
+<li>日志分级</li>
+<li>统一错误日志，错误日志会打印一份到默认的错误日志中</li>
+<li>支持日志切割，可以按年、月、日切割</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="配置"></a><a href="#配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置</h2>
+<p>配置示例：</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-comment">// common/config/default.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">logger</span>: {
+    <span class="hljs-attr">root</span>: <span class="hljs-string">'/tmp/logs'</span>,
+    <span class="hljs-attr">injectConsole</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">formatType</span>: <span class="hljs-string">'log4js'</span>,
+    <span class="hljs-attr">fileType</span>: <span class="hljs-string">'file'</span>,
+    <span class="hljs-attr">capture</span>: {
+      <span class="hljs-attr">enable</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">category</span>: <span class="hljs-string">'http'</span>,
+      <span class="hljs-attr">level</span>: <span class="hljs-string">'auto'</span>
+    },
+    <span class="hljs-attr">categories</span>: {
+      <span class="hljs-attr">user</span>: {
+        <span class="hljs-attr">transports</span>: [
+          <span class="hljs-string">'user'</span>,
+          <span class="hljs-string">'error'</span>
+        ]
+      }
+    },
+    <span class="hljs-attr">transports</span>: {
+      <span class="hljs-attr">user</span>: {
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'file'</span>,
+        <span class="hljs-attr">filename</span>: <span class="hljs-string">'user/user.log'</span>,
+        <span class="hljs-attr">maxsize</span>: <span class="hljs-string">'50m'</span>,
+        <span class="hljs-attr">maxFiles</span>: <span class="hljs-number">30</span>
+      }
+    }
+    defaultLevel: <span class="hljs-string">'debug'</span>
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="root"></a><a href="#root" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>root</h3>
+<p>string，路径，日志文件存放目录，默认存放在logs下</p>
+<h3><a class="anchor" aria-hidden="true" id="injectconsole"></a><a href="#injectconsole" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>injectConsole</h3>
+<p>boolean，是否输出到stdout，默认根据是否为生产环境来判断</p>
+<h3><a class="anchor" aria-hidden="true" id="formattype"></a><a href="#formattype" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>formatType</h3>
+<p>string，日志格式类型，<code>log4js</code> | <code>json</code>，默认为<code>log4js</code></p>
+<h3><a class="anchor" aria-hidden="true" id="filetype"></a><a href="#filetype" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>fileType</h3>
+<p>string，默认日志文件类型，<code>file</code> | <code>dateFile</code>，默认为<code>file</code></p>
+<h3><a class="anchor" aria-hidden="true" id="capture"></a><a href="#capture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>capture</h3>
+<p>object，http请求日志配置，会详细记录请求来源以及响应结果</p>
+<ul>
+<li><code>enable</code>: 是否开启，默认为true</li>
+<li><code>category</code>: 采用哪个category来保存请求日志，默认为<code>http</code></li>
+<li><code>level</code>: 日志记录级别，默认为auto，自动根据状态码输出到对应的日志</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="category"></a><a href="#category" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>category</h3>
+<p>object，日志类别，单日志模式下定义，默认为<code>undefined</code></p>
+<ul>
+<li><code>transports</code>：Array，日志传输类型</li>
+<li><code>level</code>：日志记录级别</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="categories"></a><a href="#categories" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>categories</h3>
+<p>object，日志类别，在category未定义时生效。</p>
+<p>默认设置为：</p>
+<pre><code class="hljs css languages- javascript">categories: {
+  <span class="hljs-attr">default</span>: {
+    <span class="hljs-attr">transports</span>: [
+      <span class="hljs-string">'default'</span>,
+      <span class="hljs-string">'error'</span>
+    ]
+  },
+  <span class="hljs-attr">app</span>: {
+    <span class="hljs-attr">transports</span>: [
+      <span class="hljs-string">'app'</span>,
+      <span class="hljs-string">'error'</span>
+    ]
+  },
+  <span class="hljs-attr">http</span>: {
+    <span class="hljs-attr">transports</span>: [
+      <span class="hljs-string">'http'</span>
+    ]
+  }
+}
+</code></pre>
+<ul>
+<li><code>key</code> <strong>{string}</strong> category名称</li>
+<li><code>value</code> <strong>{object}</strong> category属性</li>
+<li><code>value.transports</code> <strong>{Array&lt;string|Transport&gt;}</strong> 日志传输</li>
+<li><code>value.level</code> <strong>{string}</strong> 日志级别</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="defaultlevel"></a><a href="#defaultlevel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>defaultLevel</h3>
+<p>日志默认级别，有silly，debug，verbose，info，warn，error。默认情况下，开发环境为debug，生产环境为info。</p>
+<h3><a class="anchor" aria-hidden="true" id="transports"></a><a href="#transports" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>transports</h3>
+<p>object，日志传输设置</p>
+<ul>
+<li><code>key</code>：string，传输类型名称</li>
+<li><code>value</code>：object，日志参数</li>
+<li><code>value.type</code>：类型，可以为<code>console</code>，<code>file</code>，<code>dateFile</code></li>
+</ul>
+<p>value设置可参考<a href="https://github.com/winstonjs/winston/blob/master/docs/transports.md#winston-core">Winston Transport</a>，<a href="https://github.com/winstonjs/winston-daily-rotate-file#options">dateFile</a></p>
+<h2><a class="anchor" aria-hidden="true" id="使用"></a><a href="#使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用</h2>
+<p>logger挂载在app实例上，可以直接通过app.logger直接访问。</p>
+<p>在Base上，可以通过this.logger访问</p>
+<p>app.logger 默认挂载了['silly', 'debug', 'verbose', 'info', 'warn', 'error']这些方法，他们会输出到default category上。</p>
+<p>如果需要访问对应category，只需要在app.logger上调用相应的category。</p>
+<p>示例如下：</p>
+<pre><code class="hljs"><span class="hljs-comment">// app</span>
+app<span class="hljs-selector-class">.logger</span><span class="hljs-selector-class">.error</span>(<span class="hljs-string">'error!!'</span>)
+app<span class="hljs-selector-class">.logger</span><span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.info</span>(<span class="hljs-string">'find the user'</span>)
+
+<span class="hljs-comment">// controller</span>
+const { Controller } = require(<span class="hljs-string">'salak'</span>)
+
+class Log extends Controller {
+  async actionLog () {
+    this<span class="hljs-selector-class">.logger</span><span class="hljs-selector-class">.info</span>(<span class="hljs-string">'test'</span>)
+    this<span class="hljs-selector-class">.logger</span><span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.info</span>(<span class="hljs-string">'user'</span>)
+  }
+}
+
+module<span class="hljs-selector-class">.exports</span> = Log
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-cn/plugin.html">← 插件</a><a class="docs-next button" href="/docs/zh-cn/doc.html">接口文档 →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#主要特性">主要特性</a></li><li><a href="#配置">配置</a><ul class="toc-headings"><li><a href="#root">root</a></li><li><a href="#injectconsole">injectConsole</a></li><li><a href="#formattype">formatType</a></li><li><a href="#filetype">fileType</a></li><li><a href="#capture">capture</a></li><li><a href="#category">category</a></li><li><a href="#categories">categories</a></li><li><a href="#defaultlevel">defaultLevel</a></li><li><a href="#transports">transports</a></li></ul></li><li><a href="#使用">使用</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/salak.png" alt="Salak" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/zh-cn/introduction.html">Getting Started</a><a href="/docs/zh-cn/structure.html">Guides</a></div><div><h5>About</h5><a href="https://aotu.io" target="_blank">aotu.io</a></div></section><section class="copyright">Copyright © 2018 凹凸实验室</section></footer></div></body></html>

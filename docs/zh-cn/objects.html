@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>内置对象 · Salak</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Salak"/><meta name="docsearch:language" content="zh-cn"/><meta property="og:title" content="内置对象 · Salak"/><meta property="og:type" content="website"/><meta property="og:url" content="https://salakjs.github.io/index.html"/><meta property="og:description" content="## Salak"/><meta property="og:image" content="https://salakjs.github.io/img/salak.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://salakjs.github.io/img/salak.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/i18n.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-cn"><img class="logo" src="/img/salak.png" alt="Salak"/><h2 class="headerTitleWithLogo">Salak</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-cn/introduction.html" target="_self">文档</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/objects.html">English</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span><li class=""><a href="https://github.com/salakjs/salak" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>基础功能</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">新手入门</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/introduction.html">简介</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/quick.html">快速入门</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">基础功能</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/structure.html">目录结构</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-cn/objects.html">内置对象</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/config.html">配置</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/middleware.html">中间件</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/router.html">路由</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/controller.html">Controller</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/behavior.html">Behavior</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/service.html">Service</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/schedule.html">定时任务</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/extend.html">扩展</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/plugin.html">插件</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/logger.html">日志</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/doc.html">接口文档</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/init.html">启动自定义</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">进阶介绍</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/view.html">视图</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/database.html">数据库</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/i18n.html">国际化</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/curl.html">CURL</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/loader.html">Loader</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">扩展功能</h3><ul><li class="navListItem"><a class="navItem" href="/docs/zh-cn/multi-module.html">多模块项目</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-cn/typescript.html">Typescript</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">内置对象</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="salak"></a><a href="#salak" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Salak</h2>
+<p>Salak，继承于Koa，在一个应用中，只会被实例化一次。</p>
+<h3><a class="anchor" aria-hidden="true" id="constructor-options"></a><a href="#constructor-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>constructor (options)</h3>
+<p>Options:</p>
+<ul>
+<li><code>baseDir</code>: 应用根目录，默认为当前执行目录</li>
+<li><code>opts</code>: 配置
+<ul>
+<li><code>opts.root</code>: 根模块，默认为common</li>
+<li><code>opts.app</code>: 模块代码存放目录，默认为当前目录</li>
+<li><code>opts.runtime</code>: 框架启动临时文件存放目录，默认为当前目录runtime目录</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="实例属性-方法"></a><a href="#实例属性-方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实例属性/方法</h3>
+<p>属性：</p>
+<ul>
+<li><code>root</code>: string 应用根模块名称</li>
+<li><code>baseDir</code>: string 项目源码目录</li>
+<li><code>appDir</code>: string 项目模块目录</li>
+<li><code>runtime</code>: string 临时文件存放目录</li>
+<li><code>logger</code>: object <a href="./logger.html">Logger</a>日志对象</li>
+<li><code>configs</code>: object 配置</li>
+<li><code>modules</code>: object 模块</li>
+<li><code>version</code>: string Salak版本号</li>
+<li><code>loader</code>: object <a href="./loader.html">Loader</a></li>
+<li><code>context</code>: object ctx对象</li>
+</ul>
+<p>方法：</p>
+<ul>
+<li><code>callback (): Promise&lt;Server&gt;</code> 返回callback适配http.createServer()接收请求</li>
+<li><code>listen (...args): Promise&lt;Server&gt;</code> 传参至Server#listen</li>
+<li><code>run (port): Promise&lt;void&gt;</code> 启动应用</li>
+<li><code>beforeStart (fn: Function): void</code> 框架启动前执行</li>
+<li><code>beforeClose (fn: Function): void</code> 框架关闭前执行，可执行数据库关闭等</li>
+<li><code>close (): Promise&lt;void&gt;</code> 关闭实例，用于触发beforeClose()</li>
+<li><code>config (name, module = app.root): any</code> 返回配置信息</li>
+<li><code>setConfig (name, value, module = app.root): void</code> 设置配置信息，默认设置所有模块</li>
+<li><code>service (name, module = app.root): any</code> 调用Service</li>
+<li><code>curl (uri: string, opts?: object): Promise</code> 发起http请求</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="appcontext"></a><a href="#appcontext" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>app.context</h4>
+<ul>
+<li><code>curl (uri: string, opts?: object): Promise</code> 发起http请求</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="事件"></a><a href="#事件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>事件</h3>
+<p>在框架运行时，会在实例上触发一些事件，可以监听这些事件做一些操作。</p>
+<ul>
+<li><code>ready</code>: 应用加载完资源时触发</li>
+<li><code>ready_timeout</code>: beforeStart超时触发</li>
+<li><code>error</code>: 运行时出现异常，会触发error事件</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="实例获取方式"></a><a href="#实例获取方式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实例获取方式</h3>
+<h4><a class="anchor" aria-hidden="true" id="扩展"></a><a href="#扩展" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>扩展</h4>
+<p>定义框架基类扩展时，通过函数参数获取到实例。</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">app</span>) =&gt;</span> {}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="中间件-插件"></a><a href="#中间件-插件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>中间件/插件</h4>
+<p>在中间件/插件中，第二个参数就是app实例，应用会自动加载进去。</p>
+<p>如：</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">options, app</span>) =&gt;</span> {}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="service-controller-schedule-behavior"></a><a href="#service-controller-schedule-behavior" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Service/Controller/Schedule/Behavior</h4>
+<p>在Service，Controller, Schedule, Behavior中，可以通过this.app可以访问到。</p>
+<h2><a class="anchor" aria-hidden="true" id="base"></a><a href="#base" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Base</h2>
+<p>框架私有类，Controller、Service、Behavior、Schedule均继承于该类，不能直接使用。</p>
+<p>属性：</p>
+<ul>
+<li><code>app</code>: Salak实例</li>
+<li><code>module</code>: 模块名称</li>
+<li><code>root</code>: 根模块名称</li>
+<li><code>helper</code>: 工具类</li>
+<li><code>logger</code>: object <a href="./logger.html">Logger</a>日志对象</li>
+</ul>
+<p>方法：</p>
+<ul>
+<li><code>config (key: string, module: string): any</code> 获取配置信息</li>
+<li><code>service (name: string, module: string, args?: any[]): Service</code> service调用</li>
+<li><code>curl (uri: string, opts?: object): Promise</code> 发起http请求</li>
+<li><code>throw (...args): void</code> 抛出错误</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="controller"></a><a href="#controller" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Controller</h2>
+<p>框架提供了一个 <strong><a href="./controller.html">Controller</a></strong> 基类，所有的Controller推荐继承于该基类。</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> { Controller } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'salak'</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Blog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span> </span>{
+  <span class="hljs-keyword">async</span> actionIndex () {
+
+  }
+}
+
+<span class="hljs-built_in">module</span>.exports = Blog
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="restcontroller"></a><a href="#restcontroller" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RestController</h2>
+<p><strong><a href="./controller.html#restcontroller">RestController</a></strong> 继承于Controller，主要是提供便捷的Restful 风格的路由机制。</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> { RestController } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'salak'</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Blog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">RestController</span> </span>{
+  <span class="hljs-keyword">async</span> actionIndex () {
+
+  }
+
+  <span class="hljs-keyword">async</span> actionShow (id) {
+
+  }
+}
+
+<span class="hljs-built_in">module</span>.exports = Blog
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="behavior"></a><a href="#behavior" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Behavior</h2>
+<p><strong><a href="./behavior.html">Behavior</a></strong> 用于定义路由器校验规则，用于校验输入输出及文档生成。</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> { Behavior, Joi } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'salak'</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Blog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Behavior</span> </span>{
+  actionShow () {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">validate</span>: {
+        <span class="hljs-attr">params</span>: {
+          <span class="hljs-attr">id</span>: Joi.number().required()
+        }
+      }
+    }
+  }
+}
+
+<span class="hljs-built_in">module</span>.exports = Blog
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="service"></a><a href="#service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Service</h2>
+<p><strong><a href="./serivice.html">Service</a></strong> 基类，推荐所有Service都继承于该基类，主要用于封装业务逻辑。</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> { Service } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'salak'</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Service</span> </span>{
+  <span class="hljs-keyword">async</span> create (data) {
+    <span class="hljs-keyword">return</span> data
+  }
+}
+
+<span class="hljs-built_in">module</span>.exports = Post
+</code></pre>
+<p>调用:</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> { Controller } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'salak'</span>)
+
+<span class="hljs-keyword">const</span> Blog extends Controller {
+  <span class="hljs-keyword">async</span> actionCreate () {
+    <span class="hljs-keyword">const</span> post = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.service(<span class="hljs-string">'post'</span>).create(<span class="hljs-keyword">this</span>.body)
+
+    <span class="hljs-keyword">return</span> post
+  }
+}
+
+<span class="hljs-built_in">module</span>.exports = Blog
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="schedule"></a><a href="#schedule" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Schedule</h2>
+<p>框架提供了 <strong><a href="./schedule.html">Schedule</a></strong> 用于编写定时任务，所有的定时任务推荐基于该基类来实现。</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> { Schedule } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'salak'</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Task</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Schedule</span> </span>{
+  <span class="hljs-keyword">static</span> get timer () {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">interval</span>: <span class="hljs-string">'10s'</span>
+    }
+  }
+
+  <span class="hljs-keyword">async</span> run () {
+
+  }
+}
+
+<span class="hljs-built_in">module</span>.exports = Task
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="joi"></a><a href="#joi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Joi</h2>
+<p>数据校验，refer: <a href="https://github.com/hapijs/joi">https://github.com/hapijs/joi</a></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-cn/structure.html">← 目录结构</a><a class="docs-next button" href="/docs/zh-cn/config.html">配置 →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#salak">Salak</a><ul class="toc-headings"><li><a href="#constructor-options">constructor (options)</a></li><li><a href="#实例属性-方法">实例属性/方法</a></li><li><a href="#事件">事件</a></li><li><a href="#实例获取方式">实例获取方式</a></li></ul></li><li><a href="#base">Base</a></li><li><a href="#controller">Controller</a></li><li><a href="#restcontroller">RestController</a></li><li><a href="#behavior">Behavior</a></li><li><a href="#service">Service</a></li><li><a href="#schedule">Schedule</a></li><li><a href="#joi">Joi</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/salak.png" alt="Salak" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/zh-cn/introduction.html">Getting Started</a><a href="/docs/zh-cn/structure.html">Guides</a></div><div><h5>About</h5><a href="https://aotu.io" target="_blank">aotu.io</a></div></section><section class="copyright">Copyright © 2018 凹凸实验室</section></footer></div></body></html>

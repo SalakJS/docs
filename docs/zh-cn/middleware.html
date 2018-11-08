@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>中间件 · Salak</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Salak是基于Koa 2.0开发，所以Salak的中间件形式与Koa中间件一致。"/><meta name="docsearch:language" content="zh-cn"/><meta property="og:title" content="中间件 · Salak"/><meta property="og:type" content="website"/><meta property="og:url" content="https://salakjs.github.io/docs/index.html"/><meta property="og:description" content="Salak是基于Koa 2.0开发，所以Salak的中间件形式与Koa中间件一致。"/><meta property="og:image" content="https://salakjs.github.io/docs/img/salak.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://salakjs.github.io/docs/img/salak.png"/><link rel="shortcut icon" href="/docs/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/docs/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/zh-cn"><img class="logo" src="/docs/img/salak.png" alt="Salak"/><h2 class="headerTitleWithLogo">Salak</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/docs/zh-cn/introduction.html" target="_self">文档</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/docs/img/language.svg"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/docs/en/middleware.html">English</a></li></ul></div></li><script>
+<!DOCTYPE html><html lang="zh-cn"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>中间件 · Salak</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Salak 是基于 Koa 2.0 开发，所以 Salak 的中间件形式与 Koa 中间件一致。"/><meta name="docsearch:language" content="zh-cn"/><meta property="og:title" content="中间件 · Salak"/><meta property="og:type" content="website"/><meta property="og:url" content="https://salakjs.github.io/docs/index.html"/><meta property="og:description" content="Salak 是基于 Koa 2.0 开发，所以 Salak 的中间件形式与 Koa 中间件一致。"/><meta property="og:image" content="https://salakjs.github.io/docs/img/salak.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://salakjs.github.io/docs/img/salak.png"/><link rel="shortcut icon" href="/docs/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/docs/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/zh-cn"><img class="logo" src="/docs/img/salak.png" alt="Salak"/><h2 class="headerTitleWithLogo">Salak</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/docs/zh-cn/introduction.html" target="_self">文档</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/docs/img/language.svg"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/docs/en/middleware.html">English</a></li></ul></div></li><script>
         const languagesMenuItem = document.getElementById("languages-menu");
         const languagesDropDown = document.getElementById("languages-dropdown");
         languagesMenuItem.addEventListener("click", function(event) {
@@ -33,7 +33,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">中间件</h1></header><article><div><span><p>Salak是基于Koa 2.0开发，所以Salak的中间件形式与Koa中间件一致。</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">中间件</h1></header><article><div><span><p>Salak 是基于 Koa 2.0 开发，所以 Salak 的中间件形式与 Koa 中间件一致。</p>
 <h2><a class="anchor" aria-hidden="true" id="编写中间件"></a><a href="#编写中间件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编写中间件</h2>
 <h3><a class="anchor" aria-hidden="true" id="写法"></a><a href="#写法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>写法</h3>
 <pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">options, app</span>) =&gt;</span> {
@@ -48,8 +48,8 @@
   <span class="hljs-keyword">await</span> next()
 }
 </code></pre>
-<p>如果返回 async function，会加入到中间件执行队列中，否则会先执行mw(options, app)，然后将返回结果加入到中间件执行队列。</p>
-<p>接下来，我们以写简单的error中间件为例：</p>
+<p>如果返回 async function，会加入到中间件执行队列中，否则会先执行 mw(options, app)，然后将返回结果加入到中间件执行队列。</p>
+<p>接下来，我们以写简单的 error 中间件为例：</p>
 <pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">{ status = <span class="hljs-number">500</span> } = {}, app</span>) =&gt;</span> {
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">async</span> (ctx, next) =&gt; {
     <span class="hljs-keyword">try</span> {
@@ -67,24 +67,24 @@
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="使用中间件"></a><a href="#使用中间件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用中间件</h3>
 <h4><a class="anchor" aria-hidden="true" id="模块配置中使用"></a><a href="#模块配置中使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>模块配置中使用</h4>
-<p>通过配置middleware字段，中间件配置通过配置对应的key即可</p>
-<p>middleware配置有两种写法：</p>
+<p>通过配置 middleware 字段，中间件配置通过配置对应的 key 即可</p>
+<p>middleware 配置有两种写法：</p>
 <ul>
-<li>直接写中间件对应文件的名字，如error.js:</li>
+<li>直接写中间件对应文件的名字，如 error.js:</li>
 </ul>
-<pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = {
-  <span class="hljs-attr">middleware</span>: [
-    <span class="hljs-string">'error'</span>
-  ],
+<pre><code class="hljs css languages- javascript"><span class="hljs-comment">// common/config/default.js:</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">middleware</span>: [<span class="hljs-string">'error'</span>],
   <span class="hljs-attr">error</span>: {
     <span class="hljs-attr">status</span>: <span class="hljs-number">500</span>
   }
 }
 </code></pre>
 <ul>
-<li>写中间件名字，以及中间对应的位置，如果中间件通过npm安装，只需指定包名即可，如：</li>
+<li>写中间件名字，以及中间对应的位置，如果中间件通过 npm 安装，只需指定包名即可，如：</li>
 </ul>
-<pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = {
+<pre><code class="hljs css languages- javascript"><span class="hljs-comment">// common/config/default.js:</span>
+<span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-attr">middleware</span>: [
     {
       <span class="hljs-attr">name</span>: <span class="hljs-string">'error'</span>,
@@ -98,19 +98,26 @@
 }
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="控制器构造函数中使用"></a><a href="#控制器构造函数中使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>控制器构造函数中使用</h4>
-<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">this</span>.middleware(<span class="hljs-string">'error'</span>, <span class="hljs-keyword">this</span>.module, {
-  <span class="hljs-attr">status</span>: <span class="hljs-number">503</span>
-})
+<pre><code class="hljs css languages- javascript"><span class="hljs-comment">// src/${module}/controller/${name}.js:</span>
+<span class="hljs-keyword">constructor</span> () {
+  <span class="hljs-keyword">this</span>.middleware(<span class="hljs-string">'error'</span>, <span class="hljs-keyword">this</span>.module, {
+    <span class="hljs-attr">status</span>: <span class="hljs-number">503</span>
+  })
+}
+
 </code></pre>
 <p>控制器构造函数还支持控制器内自定义中间件，如</p>
-<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">this</span>.middleware(<span class="hljs-keyword">async</span> (ctx, next) =&gt; {
-  <span class="hljs-keyword">await</span> next()
-})
+<pre><code class="hljs css languages- javascript"><span class="hljs-comment">// src/${module}/controller/${name}.js:</span>
+<span class="hljs-keyword">constructor</span> () {
+  <span class="hljs-keyword">this</span>.middleware(<span class="hljs-keyword">async</span> (ctx, next) =&gt; {
+    <span class="hljs-keyword">await</span> next()
+  })
+}
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="中间件查询原则"></a><a href="#中间件查询原则" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>中间件查询原则</h3>
 <p>在模块配置中，功能模块中间件 =》公共模块中间件</p>
 <p>在控制器中，指定模块中间件，查询不到，会查询框架内建中间件</p>
-<h3><a class="anchor" aria-hidden="true" id="使用koa中间件"></a><a href="#使用koa中间件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用Koa中间件</h3>
+<h3><a class="anchor" aria-hidden="true" id="使用-koa-中间件"></a><a href="#使用-koa-中间件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用 Koa 中间件</h3>
 <p>以<a href="https://github.com/koajs/etag">koa-etag</a>为例，在框架运行中加载这个中间件，只需要在配置文件中添加如下代码：</p>
 <pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-keyword">const</span> config = {}
@@ -129,12 +136,12 @@
 <h2><a class="anchor" aria-hidden="true" id="通用配置"></a><a href="#通用配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>通用配置</h2>
 <p>框架自带的中间件或应用层中间件，都支持如下配置：</p>
 <ul>
-<li><code>enable</code>: Boolean，控制中间件是否开启，默认为true</li>
+<li><code>enable</code>: Boolean，控制中间件是否开启，默认为 true</li>
 <li><code>match</code>: Regex|string|Array|Function，设置只有符合条件的请求才经过该中间件</li>
 <li><code>ignore</code>: Regex|string|Array|Function，设置符合某些规则的请求不经过该中间件</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="enable"></a><a href="#enable" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>enable</h3>
-<p>如果我们需要禁用某个中间件，只需要将其设置为false即可。</p>
+<p>如果我们需要禁用某个中间件，只需要将其设置为 false 即可。</p>
 <pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-attr">meta</span>: {
     <span class="hljs-attr">enable</span>: <span class="hljs-literal">false</span>
@@ -142,23 +149,23 @@
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="match-ignore"></a><a href="#match-ignore" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>match/ignore</h3>
-<p>match和ignore参数一致，但作用相反，不允许同时配置。</p>
-<p>如想让仅以/meta开头的请求使用meta中间件，配置如下：</p>
+<p>match 和 ignore 参数一致，但作用相反，不允许同时配置。</p>
+<p>如想让仅以/meta 开头的请求使用 meta 中间件，配置如下：</p>
 <pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-attr">meta</span>: {
     <span class="hljs-attr">match</span>: <span class="hljs-string">'/meta'</span>
   }
 }
 </code></pre>
-<p>match和ignore支持的参数如下：</p>
+<p>match 和 ignore 支持的参数如下：</p>
 <ul>
-<li><code>string</code>: 当参数为字符串时，配置的是URL前缀，也能配置成字符串数组；</li>
+<li><code>string</code>: 当参数为字符串时，配置的是 URL 前缀，也能配置成字符串数组；</li>
 <li><code>Regex</code>: 正则表达式，直接匹配路径是否符合条件；</li>
-<li><code>Function</code>: 允许传入函数，由用户控制具体的规则，参数为ctx，通过返回 true/false 来判断是否满足条件。</li>
+<li><code>Function</code>: 允许传入函数，由用户控制具体的规则，参数为 ctx，通过返回 true/false 来判断是否满足条件。</li>
 </ul>
 <pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-attr">meta</span>: {
-    match (ctx) {
+    match(ctx) {
       <span class="hljs-keyword">if</span> (ctx.path.indexOf(<span class="hljs-string">'meta'</span>) !== <span class="hljs-number">0</span>) {
         <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
       }
@@ -178,7 +185,7 @@
 <li><code>error</code></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="禁用默认中间件"></a><a href="#禁用默认中间件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>禁用默认中间件</h3>
-<p>在根模块配置中，将内置中间件enable设置为false即可。</p>
+<p>在根模块配置中，将内置中间件 enable 设置为 false 即可。</p>
 <p>如：</p>
 <pre><code class="hljs css languages- javascript"><span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-attr">error</span>: {
@@ -187,35 +194,35 @@
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="static"></a><a href="#static" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>static</h3>
-<p>静态资源渲染，采用koa-static</p>
+<p>静态资源渲染，采用 koa-static</p>
 <p>配置：</p>
 <ul>
-<li><code>root</code>: 默认为应用public</li>
+<li><code>root</code>: 默认为应用 public</li>
 <li><code>opts</code>: 同<a href="https://github.com/koajs/static#options">koa-static opts</a></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="bodyparser"></a><a href="#bodyparser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bodyParser</h3>
-<p>采用了koa-bodyparser，默认支持json、form解析</p>
+<p>采用了 koa-bodyparser，默认支持 json、form 解析</p>
 <p>配置可参考<a href="https://github.com/koajs/bodyparser#options">koa-bodyparser</a></p>
-<p><strong>注：koa-bodyparser已经不包含multipart/form-data解析</strong></p>
+<p><strong>注：koa-bodyparser 已经不包含 multipart/form-data 解析</strong></p>
 <h3><a class="anchor" aria-hidden="true" id="error"></a><a href="#error" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>error</h3>
-<p>error中间件，处理应用请求过程中报错</p>
+<p>error 中间件，处理应用请求过程中报错</p>
 <p>配置:</p>
 <ul>
-<li><code>status</code>: 状态码设置，默认为'auto'，表示根据出错状态来自动设置http响应状态码；否则为200状态码</li>
-<li><code>type</code>: 错误输出类型，可以为json或者html，无配置情况下，框架根据accept-type自动选择</li>
+<li><code>status</code>: 状态码设置，默认为'auto'，表示根据出错状态来自动设置 http 响应状态码；否则为 200 状态码</li>
+<li><code>type</code>: 错误输出类型，可以为 json 或者 html，无配置情况下，框架根据 accept-type 自动选择</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="notfound"></a><a href="#notfound" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>notFound</h3>
-<p>notFound中间件，处理应用请求404错误</p>
+<p>notFound 中间件，处理应用请求 404 错误</p>
 <p>配置：</p>
 <ul>
-<li><code>type</code>: 输出类型，可以为json或html，无配置情况下，框架根据accept-type自动选择</li>
-<li><code>pageUrl</code>: 如设置，出现404时，则跳转至相应URL</li>
+<li><code>type</code>: 输出类型，可以为 json 或 html，无配置情况下，框架根据 accept-type 自动选择</li>
+<li><code>pageUrl</code>: 如设置，出现 404 时，则跳转至相应 URL</li>
 <li><code>notFoundHtml</code>: 定制错误页面</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="sitefile"></a><a href="#sitefile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>siteFile</h3>
-<p>siteFile中间件，用于配置网站文件</p>
+<p>siteFile 中间件，用于配置网站文件</p>
 <p>如：</p>
 <ul>
 <li><code>/favicon.ico</code>: path.join('/favicon.ico')</li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/zh-cn/config.html">← 配置</a><a class="docs-next button" href="/docs/docs/zh-cn/router.html">路由 →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#编写中间件">编写中间件</a><ul class="toc-headings"><li><a href="#写法">写法</a></li><li><a href="#使用中间件">使用中间件</a></li><li><a href="#中间件查询原则">中间件查询原则</a></li><li><a href="#使用koa中间件">使用Koa中间件</a></li></ul></li><li><a href="#通用配置">通用配置</a><ul class="toc-headings"><li><a href="#enable">enable</a></li><li><a href="#match-ignore">match/ignore</a></li></ul></li><li><a href="#框架默认中间件">框架默认中间件</a><ul class="toc-headings"><li><a href="#禁用默认中间件">禁用默认中间件</a></li><li><a href="#static">static</a></li><li><a href="#bodyparser">bodyParser</a></li><li><a href="#error">error</a></li><li><a href="#notfound">notFound</a></li><li><a href="#sitefile">siteFile</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/salak.png" alt="Salak" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/zh-cn/introduction.html">Getting Started</a><a href="/docs/docs/zh-cn/structure.html">Guides</a></div><div><h5>About</h5><a href="https://aotu.io" target="_blank">aotu.io</a></div></section><section class="copyright">Copyright © 2018 凹凸实验室</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/zh-cn/config.html">← 配置</a><a class="docs-next button" href="/docs/docs/zh-cn/router.html">路由 →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#编写中间件">编写中间件</a><ul class="toc-headings"><li><a href="#写法">写法</a></li><li><a href="#使用中间件">使用中间件</a></li><li><a href="#中间件查询原则">中间件查询原则</a></li><li><a href="#使用-koa-中间件">使用 Koa 中间件</a></li></ul></li><li><a href="#通用配置">通用配置</a><ul class="toc-headings"><li><a href="#enable">enable</a></li><li><a href="#match-ignore">match/ignore</a></li></ul></li><li><a href="#框架默认中间件">框架默认中间件</a><ul class="toc-headings"><li><a href="#禁用默认中间件">禁用默认中间件</a></li><li><a href="#static">static</a></li><li><a href="#bodyparser">bodyParser</a></li><li><a href="#error">error</a></li><li><a href="#notfound">notFound</a></li><li><a href="#sitefile">siteFile</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/salak.png" alt="Salak" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/zh-cn/introduction.html">Getting Started</a><a href="/docs/docs/zh-cn/structure.html">Guides</a></div><div><h5>About</h5><a href="https://aotu.io" target="_blank">aotu.io</a></div></section><section class="copyright">Copyright © 2018 凹凸实验室</section></footer></div></body></html>

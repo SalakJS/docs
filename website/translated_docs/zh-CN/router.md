@@ -57,6 +57,10 @@ module.exports = {
 - `defaultMethods: string|string[]`: 默认注册的HTTP Methods，默认为GET
 - `loadOrder: string[]`: Controller加载顺序，可指定加载模块哪些控制器以及相应的路由注册顺序
 
+## 路由匹配顺序
+在URL可以匹配多个路由的情况下，路由的选择默认是由对应actionXXX方法在controller中注册的先后顺序决定，与behavior或controller中Routes中配置顺序无关。使用loadOrder配置可以覆盖默认行为。
+
+
 ## 路由注册路径
 
 在框架启动时，会生成 `/runtime/router/definitions.json`，该文件包含了注册的所有路由，可以根据该文件来排查一些问题。

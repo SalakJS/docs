@@ -1,0 +1,35 @@
+{
+  "docs": {
+    "Getting Started": [
+      "introduction",
+      "quick"
+    ],
+    "Guides": [
+      "structure",
+      "objects",
+      "config",
+      "middleware",
+      "router",
+      "controller",
+      "behavior",
+      "service",
+      "schedule",
+      "extend",
+      "plugin",
+      "logger",
+      "doc",
+      "init"
+    ],
+    "Advanced": [
+      "view",
+      "database",
+      "i18n",
+      "curl",
+      "loader"
+    ],
+    "More Features": [
+      "multi-module",
+      "typescript"
+    ]
+  }
+}

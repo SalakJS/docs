@@ -57,6 +57,7 @@ Module: user, Controller: login, Action: index =&gt; GET /user/login
 <li><code>defaultMethods: string|string[]</code>: 默认注册的HTTP Methods，默认为GET</li>
 <li><code>load: string[]</code>: Controller加载顺序，可指定加载模块哪些控制器以及相应的路由注册顺序</li>
 <li><code>replaceIndex: boolean</code>: 是否保留路由中index，如index.js控制器，如保留，则路由为 /index/${action}，否则为/${action}，默认为true，即不保留<code>index</code></li>
+<li><code>ignoreValidateResponses</code>: 忽略响应数据校验，默认为false，表示不忽略，会校验响应数据</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="多模块模式路由配置"></a><a href="#多模块模式路由配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>多模块模式路由配置</h3>
 <h4><a class="anchor" aria-hidden="true" id="公共模块路由配置"></a><a href="#公共模块路由配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>公共模块路由配置</h4>
@@ -66,6 +67,7 @@ Module: user, Controller: login, Action: index =&gt; GET /user/login
 <li><code>defaultMethods: string|string[]</code>: 默认注册的HTTP Methods，默认为GET</li>
 <li><code>load: string[]</code>: Controller加载顺序，可指定加载模块哪些控制器以及相应的路由注册顺序</li>
 <li><code>replaceIndex: boolean</code>: 是否保留路由中index，如index.js控制器，如保留，则路由为 /index/${action}，否则为/${action}，默认为true，即不保留<code>index</code></li>
+<li><code>ignoreValidateResponses</code>: 忽略响应数据校验，默认为false，表示不忽略，会校验响应数据</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="功能模块路由设置"></a><a href="#功能模块路由设置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>功能模块路由设置</h4>
 <ul>
@@ -74,6 +76,7 @@ Module: user, Controller: login, Action: index =&gt; GET /user/login
 <li><code>defaultRoute: string</code>: 设置默认路由，/${controller}(/${action})?，action未设置时，默认为<code>index</code></li>
 <li><code>defaultMethods: string|string[]</code>: 默认注册的HTTP Methods，默认为GET</li>
 <li><code>load: string[]</code>: Controller加载顺序，可指定加载模块哪些控制器以及相应的路由注册顺序</li>
+<li><code>ignoreValidateResponses</code>: 忽略响应数据校验，默认为false，表示不忽略，会校验响应数据</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="路由匹配顺序"></a><a href="#路由匹配顺序" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>路由匹配顺序</h2>
 <p>在URL可以匹配多个路由的情况下，路由的选择默认是由对应actionXXX方法在controller中注册的先后顺序决定，与behavior或controller中Routes中配置顺序无关。使用load配置可以覆盖默认行为。</p>

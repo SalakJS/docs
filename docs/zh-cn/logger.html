@@ -68,11 +68,17 @@
       <span class="hljs-attr">user</span>: {
         <span class="hljs-attr">type</span>: <span class="hljs-string">'file'</span>,
         <span class="hljs-attr">filename</span>: <span class="hljs-string">'user/user.log'</span>,
-        <span class="hljs-attr">maxsize</span>: <span class="hljs-string">'50m'</span>,
-        <span class="hljs-attr">maxFiles</span>: <span class="hljs-number">30</span>
+        <span class="hljs-attr">maxsize</span>: <span class="hljs-number">50</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span> <span class="hljs-comment">// 50m,</span>
+        maxFiles: <span class="hljs-number">30</span>
       }
-    }
-    defaultLevel: <span class="hljs-string">'debug'</span>
+    },
+    <span class="hljs-attr">transportsDefaultOptions</span>: {
+      <span class="hljs-attr">file</span>: {
+        <span class="hljs-attr">maxsize</span>: <span class="hljs-number">50</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span> <span class="hljs-comment">// 50m,</span>
+        maxFiles: <span class="hljs-number">30</span>
+      }
+    },
+    <span class="hljs-attr">defaultLevel</span>: <span class="hljs-string">'debug'</span>
   }
 }
 </code></pre>
@@ -138,6 +144,12 @@
 <li><code>value.type</code>：类型，可以为<code>console</code>，<code>file</code>，<code>dateFile</code></li>
 </ul>
 <p>value设置可参考<a href="https://github.com/winstonjs/winston/blob/master/docs/transports.md#winston-core">Winston Transport</a>，<a href="https://github.com/winstonjs/winston-daily-rotate-file#options">dateFile</a></p>
+<h3><a class="anchor" aria-hidden="true" id="transportsdefaultoptions"></a><a href="#transportsdefaultoptions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>transportsDefaultOptions</h3>
+<p>object, transport 默认配置，可用于全局设置file/dateFile类型的transport</p>
+<ul>
+<li><code>key</code>: string, transport类型，如<code>file</code>，<code>dateFile</code></li>
+<li><code>value</code>: object，transports配置</li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="使用"></a><a href="#使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用</h2>
 <p>logger挂载在app实例上，可以直接通过app.logger直接访问。</p>
 <p>在Base上，可以通过this.logger访问</p>
@@ -160,4 +172,4 @@ class Log extends Controller {
 
 module<span class="hljs-selector-class">.exports</span> = Log
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/zh-cn/plugin.html">← 插件</a><a class="docs-next button" href="/docs/docs/zh-cn/doc.html">接口文档 →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#主要特性">主要特性</a></li><li><a href="#配置">配置</a><ul class="toc-headings"><li><a href="#root">root</a></li><li><a href="#injectconsole">injectConsole</a></li><li><a href="#removeconsoleafterserverstart">removeConsoleAfterServerStart</a></li><li><a href="#formattype">formatType</a></li><li><a href="#filetype">fileType</a></li><li><a href="#capture">capture</a></li><li><a href="#category">category</a></li><li><a href="#categories">categories</a></li><li><a href="#defaultlevel">defaultLevel</a></li><li><a href="#transports">transports</a></li></ul></li><li><a href="#使用">使用</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/salak.png" alt="Salak" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/zh-cn/introduction.html">Getting Started</a><a href="/docs/docs/zh-cn/structure.html">Guides</a></div><div><h5>About</h5><a href="https://aotu.io" target="_blank">aotu.io</a></div></section><section class="copyright">Copyright © 2019 凹凸实验室</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/zh-cn/plugin.html">← 插件</a><a class="docs-next button" href="/docs/docs/zh-cn/doc.html">接口文档 →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#主要特性">主要特性</a></li><li><a href="#配置">配置</a><ul class="toc-headings"><li><a href="#root">root</a></li><li><a href="#injectconsole">injectConsole</a></li><li><a href="#removeconsoleafterserverstart">removeConsoleAfterServerStart</a></li><li><a href="#formattype">formatType</a></li><li><a href="#filetype">fileType</a></li><li><a href="#capture">capture</a></li><li><a href="#category">category</a></li><li><a href="#categories">categories</a></li><li><a href="#defaultlevel">defaultLevel</a></li><li><a href="#transports">transports</a></li><li><a href="#transportsdefaultoptions">transportsDefaultOptions</a></li></ul></li><li><a href="#使用">使用</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/salak.png" alt="Salak" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/zh-cn/introduction.html">Getting Started</a><a href="/docs/docs/zh-cn/structure.html">Guides</a></div><div><h5>About</h5><a href="https://aotu.io" target="_blank">aotu.io</a></div></section><section class="copyright">Copyright © 2019 凹凸实验室</section></footer></div></body></html>
